@@ -299,7 +299,7 @@
 <body>
     <header>
         <h1>Elegant Jewelry Catalog</h1>
-        <img src="bismillah.png" alt="Shop Logo">
+        <img src="bismillah-min.png" alt="Shop Logo">
         <p>Discover timeless elegance and beauty</p>
     </header>
 
@@ -330,7 +330,7 @@
 <section class="slideshow-container">
     <div class="slideshow">
         <!-- First Slide: Welcome Banner -->
-        <div class="slide" style="background: url('welcomeImage.jpg') no-repeat center center/cover;">
+        <div class="slide" style="background: url('welcomeImage-min.jpg') no-repeat center center/cover;">
             <div class="slide-overlay">
                 <h2>Welcome to Elegant Jewelry</h2>
                 <p>Discover timeless elegance and beauty</p>
@@ -338,7 +338,7 @@
         </div>
         
         <!-- Second Slide: Featured Product -->
-        <div class="slide" style="background: url('secondSlide2.jpg') no-repeat center center/cover;">
+        <div class="slide" style="background: url('secondSlide2-min.jpg') no-repeat center center/cover;">
             <div class="slide-overlay">
                 <h2>Featured Collection</h2>
                 <p>Exclusive Gold Necklace - $499.99</p>
@@ -367,17 +367,17 @@
     <!-- Jewelry Collection Section -->
     <section id="products">
         <div class="product">
-            <img src="greenWhite.png" alt="Gold Necklace">
+            <img src="greenWhite-min.png" alt="Gold Necklace">
             <h3>Gold Necklace</h3>
             <a href="https://www.instagram.com/selected.jewelery/" class="contact-btn">Contacter le vendeur</a>
         </div>
         <div class="product">
-            <img src="necklace1.png" alt="Diamond Ring">
+            <img src="necklace1-min.png" alt="Diamond Ring">
             <h3>Diamond Ring</h3>
             <a href="https://www.instagram.com/selected.jewelery/" class="contact-btn">Contact Dealer via Instagram</a>
         </div>
         <div class="product">
-            <img src="hips1.png" alt="Silver Bracelet">
+            <img src="hips1-min.png" alt="Silver Bracelet">
             <h3>Silver Bracelet</h3>
             <a href="https://www.instagram.com/selected.jewelery/" class="contact-btn">Contact Dealer via Instagram</a>
         </div>
@@ -389,46 +389,41 @@
         <p>&copy; 2024 Elegant Jewelry Catalog. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script defer>
         // Toggle Sidebar for Mobile
         function toggleSidebar() {
-            document.getElementById("sidebar").classList.toggle("open");
-            document.getElementById("overlay").classList.toggle("visible");
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("visible");
         }
-
-        // Close Sidebar when clicking on the overlay
+    
         function closeSidebar() {
             document.getElementById("sidebar").classList.remove("open");
             document.getElementById("overlay").classList.remove("visible");
         }
-    </script>
-    <script>
-        let currentIndex = 0;
     
-        function changeSlide(direction) {
+        // Slideshow functionality
+        let slideIndex = 0;
+    
+        function showSlides() {
             const slides = document.querySelectorAll('.slide');
-            currentIndex = (currentIndex + direction + slides.length) % slides.length;
-            document.querySelector('.slideshow').style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateDots();
-        }
-    
-        function currentSlide(index) {
-            currentIndex = index - 1;
-            document.querySelector('.slideshow').style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateDots();
-        }
-    
-        function updateDots() {
             const dots = document.querySelectorAll('.dot');
+    
+            slides.forEach((slide, index) => {
+                slide.style.display = index === slideIndex ? 'block' : 'none';
+            })
+    
             dots.forEach((dot, index) => {
-                dot.style.background = index === currentIndex ? 'gray' : 'white';
+                dot.classList.toggle('active', index === slideIndex);
             });
+    
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
         }
     
-        // Autoplay
-        let autoplay = setInterval(() => changeSlide(1), 5000);
-        document.querySelector('.slideshow-container').addEventListener('mouseover', () => clearInterval(autoplay));
-        document.querySelector('.slideshow-container').addEventListener('mouseout', () => autoplay = setInterval(() => changeSlide(1), 5000));
+        document.addEventListener('DOMContentLoaded', showSlides);
     </script>
+    
 </body>
 </html>
