@@ -255,45 +255,47 @@
             }
         }
 
-        /* Category Section Styles */
-        #categories {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            padding: 2rem;
-        }
-        .category {
-            background-color: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            cursor: pointer;
-        }
-        .category img {
-            width: 80%;
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-        .category h3 {
-            font-size: 1.2rem;
-            color: #d4af37;
-        }
-        .category p {
-            font-size: 1rem;
-            color: #333;
-        }
-        /* Mobile Adjustments */
-        @media (max-width: 767px) {
-            #categories {
-                grid-template-columns: 1fr 1fr; /* 2 items per row on mobile */
-            }
-            .category img {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
+       /* Category Section Styles */
+#categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamically adjust columns */
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center; /* Center items in incomplete rows */
+}
+.category {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+.category img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.category h3 {
+    font-size: 1.2rem;
+    color: #d4af37;
+}
+.category p {
+    font-size: 1rem;
+    color: #333;
+}
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    #categories {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    }
+    .category img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -386,9 +388,9 @@
     <nav>
         <div class="nav-left">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
         </div>
-        <div class="nav-title">Bijouterie Ibn Batuta</div>
+        <div class="nav-title" style="margin-left: 50px;">Bijouterie Ibn Batuta</div>
         <div class="nav-right">
             <a href="#products">Products</a>
             <a href="https://www.instagram.com/selected.jewelery/">Contact</a>
@@ -479,9 +481,14 @@
             <p>Browse our collection of beautiful necklaces .</p>
         </div>
         <div class="category" onclick="window.location.href='bracelets.html'">
-            <img src="greenWhite-min.png" alt="Bracelets">
+            <img src="BraceletCategory.png" alt="Bracelets">
             <h3>Bracelets</h3>
             <p>Shop stylish bracelets for every wrist.</p>
+        </div>
+        <div class="category" onclick="window.location.href='ceinture.html'">
+            <img src="ceinture.png" alt="Ceinture">
+            <h3>Ceinture</h3>
+            <p>Discover elegant belts to complete your look.</p>
         </div>
     </section>
 

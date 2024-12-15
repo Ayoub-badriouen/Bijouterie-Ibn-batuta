@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rings - Elegant Jewelry Catalog</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your main stylesheet -->
+    <script src="script.js" defer></script> <!-- Link to your JavaScript file for the sidebar toggle -->
+</head>
+<body>
+        <!-- Header (same as index.html) -->
+        <header>
+            <div class="header-container">
+                <img src="sideHeaders-left.png" alt="Side Image" class="side-image left-image">
+                <div class="text-content">
+                    <h1>Elegant Jewelry Catalog</h1>
+                    <img src="bismillah-min.png" alt="Shop Logo" class="shop-logo">
+                    <p>Discover timeless elegance and beauty</p>
+                </div>
+                <img src="sideHeaders.png" alt="Side Image" class="side-image">
+            </div>
+        </header>
+       <!-- Desktop Navigation -->
+       <nav>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-title" style="margin-left: 50px;">Bijouterie Ibn Batuta</div>
+        <div class="nav-right">
+            <a href="index.html">Products</a>
+            <a href="https://www.instagram.com/selected.jewelery/">Contact</a>
+        </div>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    </nav>
+
+    <!-- Sidebar for Mobile -->
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <a href="index.html" onclick="closeSidebar()">Home</a>
+        <a href="about.html" onclick="closeSidebar()">About</a>
+        <a href="index.html" onclick="closeSidebar()">Products</a>
+        <a href="https://www.instagram.com/selected.jewelery/" onclick="closeSidebar()">Contact</a>
+    </div>
+
+
+
+    <!-- Product List for Rings -->
+    <section class="product-list">
+        <h2>Our Collection of Bracelets</h2>
+        
+        <div class="products">
+            <!-- Example Product 1 -->
+            <div class="product">
+                <img src="Bracelets1.png" alt="Ring 1">
+                <h3>Bracelet beldi en vert</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+        
+            <!-- Example Product 2 -->
+            <div class="product">
+                <img src="Bracelets2.png" alt="Ring 2">
+                <h3>Bracelet blanc</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+        
+            <!-- Example Product 3 -->
+            <div class="product">
+                <img src="Bracelets3.png" alt="Ring 3">
+                <h3>Bracelet rosas</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+            <!-- Example Product 3 -->
+            <div class="product">
+                <img src="Bracelets4.png" alt="Ring 3">
+                <h3>Sertla coloré</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+            <!-- Example Product 3 -->
+            <div class="product">
+                <img src="Bracelets5.png" alt="Ring 3">
+                <h3>Bracelet Beldi</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+            <div class="product">
+                <img src="Bracelets6.png" alt="Ring 3">
+                <h3>Bracelet coloré</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+            <div class="product">
+                <img src="Bracelets7.png" alt="Ring 3">
+                <h3>Sertla</h3>
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank">
+                    <button>Contacter le vendeur</button>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Elegant Jewelry Catalog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

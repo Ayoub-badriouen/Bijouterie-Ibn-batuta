@@ -3,392 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Catalog</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #fdfcf7, #f3eacb);
-            color: #333;
-        }
-        header {
-            background-color: #fff;
-            color: #d4af37;
-            padding: 1rem;
-            text-align: center;
-        }
-        header img {
-            max-width: 100px;
-            display: block;
-            margin: 0 auto;
-        }
-        nav {
-            background-color: #f3f3f3;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-        }
-        .nav-left, .nav-right {
-            display: flex;
-        }
-        .nav-left a, .nav-right a {
-            color: #d4af37;
-            text-decoration: none;
-            margin-right: 2rem;
-            font-weight: bold;
-        }
-        .nav-left a:hover, .nav-right a:hover {
-            text-decoration: underline;
-        }
-        .nav-title {
-            font-size: 1.5rem;
-            color: #d4af37;
-            font-weight: bold;
-            text-align: center;
-            flex-grow: 1;
-        }
-        @media (max-width: 767px) {
-            .nav-left, .nav-right {
-                display: none;
-            }
-            .nav-title {
-                font-size: 1.2rem;
-            }
-            .menu-button {
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: #d4af37;
-                cursor: pointer;
-                display: block;
-            }
-        }
-        .menu-button {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #d4af37;
-            cursor: pointer;
-            display: block;
-        }
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 70%;
-            max-width: 300px;
-            background-color: #fff;
-            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-            transition: left 0.3s ease;
-            z-index: 1000;
-            padding: 1rem;
-        }
-        .sidebar a {
-            display: block;
-            color: #d4af37;
-            text-decoration: none;
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
-        .sidebar.open {
-            left: 0;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease;
-            z-index: 999;
-        }
-        .overlay.visible {
-            opacity: 1;
-            visibility: visible;
-        }
+    <title>About - In Memory</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="script.js" defer></script> <!-- Link to your JavaScript file for the sidebar toggle -->
 
-        .slideshow-container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .slideshow {
-        display: flex;
-        height: 100%;
-        transition: transform 1s ease;
-    }
-    .slide {
-        flex: 1 0 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        color: white;
-    }
-    .slide-overlay {
-        position: absolute;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 5px;
-    }
-    .slide h2 {
-        margin: 0;
-        font-size: 2rem;
-    }
-    .slide p {
-        margin: 10px 0 0;
-    }
-    .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-    }
-    .prev {
-        left: 10px;
-    }
-    .next {
-        right: 10px;
-    }
-    .dots-container {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-    }
-    .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: white;
-        cursor: pointer;
-    }
-
-        /* Animation for horizontal scroll */
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Contact button styles */
-        .contact-btn {
-            display: block;
-            text-align: center;
-            margin-top: 1rem;
-            background-color: #d4af37;
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .contact-btn:hover {
-            background-color: #b39430;
-        }
-
-        .footer {
-            text-align: center;
-            background-color: #f3f3f3;
-            color: #d4af37;
-            padding: 1rem;
-            box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Product Section Styles */
-        #products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            padding: 2rem;
-        }
-        .product {
-            background-color: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .product img {
-            width: 80%;
-            max-width: 300px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-        .product h3 {
-            font-size: 1.2rem;
-            color: #d4af37;
-        }
-        .product p {
-            font-size: 1rem;
-            color: #333;
-        }
-        /* Mobile Adjustments */
-        @media (max-width: 767px) {
-            #products {
-                grid-template-columns: 1fr; /* 1 item per row on mobile */
-            }
-            .product img {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-
-        /* Category Section Styles */
-        #categories {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            padding: 2rem;
-        }
-        .category {
-            background-color: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            cursor: pointer;
-        }
-        .category img {
-            width: 80%;
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-        .category h3 {
-            font-size: 1.2rem;
-            color: #d4af37;
-        }
-        .category p {
-            font-size: 1rem;
-            color: #333;
-        }
-        /* Mobile Adjustments */
-        @media (max-width: 767px) {
-            #categories {
-                grid-template-columns: 1fr 1fr; /* 2 items per row on mobile */
-            }
-            .category img {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <!-- Left Side Image -->
-            <img src="sideHeaders-left.png" alt="Side Image" class="side-image left-image">
-            
-            <!-- Text Content -->
-            <div class="text-content">
-                <h1>Elegant Jewelry Catalog</h1>
-                <img src="bismillah-min.png" alt="Shop Logo" class="shop-logo">
-                <p>Discover timeless elegance and beauty</p>
-            </div>
-    
-            <!-- Right Side Image -->
-            <img src="sideHeaders.png" alt="Side Image" class="side-image">
+          <!-- Desktop Navigation -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
         </div>
+        <div class="nav-title" style="margin-left: 50px;">Bijouterie Ibn Batuta</div>
+        <div class="nav-right">
+            <a href="index.html">Products</a>
+            <a href="https://www.instagram.com/selected.jewelery/">Contact</a>
+        </div>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    </nav>
+
+    <!-- Sidebar for Mobile -->
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <a href="index.html" onclick="closeSidebar()">Home</a>
+        <a href="about.html" onclick="closeSidebar()">About</a>
+        <a href="index.html" onclick="closeSidebar()">Products</a>
+        <a href="https://www.instagram.com/selected.jewelery/" onclick="closeSidebar()">Contact</a>
+    </div>
+
     </header>
-    
-    <style>
-        /* Container to center everything */
-        .header-container {
-            display: flex;
-            align-items: center; /* Vertically center the items */
-            justify-content: center; /* Horizontally center the items */
-            width: 100%;
-            text-align: center; /* Center the text content */
-        }
-    
-        /* General image styling */
-        .side-image {
-            max-width: 300px;
-            object-fit: contain;
-            margin: 0 20px; /* Space between images and text */
-        }
-    
-        /* Left side image specific styling to make it closer */
-        .left-image {
-            margin-right: 10px; /* Decrease the margin on the right to bring the left image closer */
-        }
-    
-        /* Text content alignment */
-        .text-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center text and logo vertically */
-        }
-    
-        /* Shop Logo resizing */
-        .shop-logo {
-            max-width: 150px;
-        }
-    
-        /* Optional: Adjust for smaller screens */
-        @media screen and (max-width: 768px) {
-            .side-image {
-                max-width: 200px; /* Smaller image size on tablets */
-            }
-    
-            h1 {
-                font-size: 1.5em; /* Smaller heading text */
-            }
-    
-            p {
-                font-size: 1em; /* Adjust paragraph size */
-            }
-        }
-    
-        @media screen and (max-width: 480px) {
-            .side-image {
-                max-width: 150px; /* Even smaller image size on phones */
-            }
-    
-            h1 {
-                font-size: 1.2em;
-            }
-    
-            p {
-                font-size: 0.9em;
-            }
-        }
-    </style>
-    
-    
-
-    
-
-
-
-
-
-    <footer class="footer">
-        <p>&copy; 2024 Elegant Jewelry Catalog. All rights reserved.</p>
-    </footer>
-
+    <main id="about-section">
+        <img src="about.png" alt="In Memory of LMfedel Jbirah Aghmich" class="memorial-image">
+        <div class="about-content">
+            <h2>In Memory of LMfedel Jbirah Aghmich</h2>
+            <p>
+                This site is dedicated to the cherished memory of LMfedel Jbirah Aghmich, whose spirit continues 
+                to inspire and guide us. May this space honor their legacy and the beauty they brought to our lives.
+            </p>
+        </div>
+    </main>
 </body>
 </html>
