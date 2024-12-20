@@ -147,7 +147,7 @@
         <a href="#home" onclick="closeSidebar()">Home</a>
         <a href="about.html" onclick="closeSidebar()">About</a>
         <a href="#categories" onclick="closeSidebar()">Products</a>
-        <a href="https://www.instagram.com/selected.jewelery/" onclick="closeSidebar()">Contact</a>
+        <a href="https://www.instagram.com/bijoutrie_anas/" onclick="closeSidebar()">Contact</a>
     </div>
 
     <!-- Slideshow Section -->
@@ -162,7 +162,7 @@
             </div>
 
             <!-- Second Slide: Featured Product -->
-            <div class="slide" style="background: url('secondSlide2-min.jpg') no-repeat center center/cover;">
+            <div class="slide" style="background: url('slideShow2.png') no-repeat center center/cover;">
                 <div class="slide-overlay">
                 </div>
             </div>
@@ -180,8 +180,7 @@
         </div>
 
         <!-- Navigation Arrows -->
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
         <!--     <script>let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function showSlide(index) {
@@ -294,27 +293,47 @@
             document.getElementById("overlay").classList.remove("visible");
         }
 
-        // Slideshow functionality
-        let slideIndex = 0;
+        let slideIndex = 0; // Start with the first slide
 
-        function showSlides() {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
+function showSlides() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
 
-            slides.forEach((slide, index) => {
-                slide.style.display = index === slideIndex ? 'block' : 'none';
-            })
+    // Hide all slides with zero opacity
+    slides.forEach((slide) => {
+        slide.style.display = 'none';
+        slide.style.opacity = 0;
+    });
 
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === slideIndex);
-            });
+    // Show current slide with smooth transition
+    slides[slideIndex].style.display = 'block';
+    setTimeout(() => {
+        slides[slideIndex].style.opacity = 1;
+    }, 50); // small delay to allow for the transition effect to kick in
 
-            slideIndex = (slideIndex + 1) % slides.length;
-            setTimeout(showSlides, 3000); // Change slide every 3 seconds
-        }
+    // Activate corresponding dot
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideIndex);
+    });
 
-        document.addEventListener('DOMContentLoaded', showSlides);
+    // Keep slide visible for 5 seconds before transitioning to next
+    setTimeout(showSlides, 5000); // Slide change every 5 seconds
+}
+
+function changeSlide(direction) {
+    const slides = document.querySelectorAll('.slide');
+    slideIndex = (slideIndex + direction + slides.length) % slides.length;
+    showSlides(); // Reapply the changes after manual control
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlides(); // Start the slideshow
+});
+
+
     </script>
+<button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+<button class="next" onclick="changeSlide(1)">&#10095;</button>
 
 </body>
 <footer class="footer">
@@ -323,7 +342,7 @@
             <h3>Contact Us</h3>
             <ul>
                 <li>
-                    <a href="https://www.instagram.com/bijouterie_anas/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </li>
                 <li>
                     <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank" rel="noopener noreferrer">WhatsApp</a>
