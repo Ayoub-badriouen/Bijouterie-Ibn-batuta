@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 
     <title>Jewelry Catalog</title>
- 
+
 </head>
+
 <body>
     <header>
         <div class="header-container">
             <!-- Left Side Image -->
             <img src="sideHeaders-left.png" alt="Side Image" class="side-image left-image">
-            
+
             <!-- Text Content -->
             <div class="text-content">
                 <img src="bismillah-min.png" alt="Shop Logo" class="shop-logo">
                 <p>Explore the elegance of traditional Moroccan jewelry.</p>
             </div>
-    
+
             <!-- Right Side Image -->
             <img src="sideHeaders.png" alt="Side Image" class="side-image">
         </div>
     </header>
-    
-     <!-- Add Language Switcher -->
-<!-- <div class="language-switcher" style="text-align: right; padding: 1rem; background-color: #f9f9f9;">
+
+    <!-- Add Language Switcher -->
+    <!-- <div class="language-switcher" style="text-align: right; padding: 1rem; background-color: #f9f9f9;">
     <select id="language-select" onchange="changeLanguage()">
         <option value="en">English</option>
         <option value="ar">العربية</option>
@@ -34,8 +36,8 @@
     </select>
 </div> -->
 
-<!-- Add this script for language switching -->
-<!-- <script>
+    <!-- Add this script for language switching -->
+    <!-- <script>
     function changeLanguage() {
         const language = document.getElementById('language-select').value;
         if (language === 'ar') {
@@ -52,70 +54,85 @@
 </script>
  -->
 
- <!-- Desktop Navigation -->
-<nav>
-    <div class="nav-left">
-        <a href="#home">Home</a>
-        <a href="about.html">About</a>
-    </div>
-    <div class="nav-title" style="margin-left: 50px;">Bijouterie Ibn Batuta</div>
-    <div class="nav-right">
-        <!-- Dropdown for Products -->
-<div style="position: relative; display: inline-block;">
-    <a href="#jewelry-categories" 
-       onclick="event.preventDefault(); toggleDropdown('dropdown-menu');" 
-       style="text-decoration: none; color: #d4af37;">Products ▼</a>
-    <ul id="dropdown-menu" 
-        style="list-style: none; position: absolute; top: 100%; left: 0; 
+    <!-- Desktop Navigation -->
+    <nav>
+        <div class="nav-left">
+            <a href="#home">Home</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-title" style="margin-left: 50px;">Bijouterie Ibn Batuta</div>
+        <div class="nav-right">
+            <!-- Dropdown for Products -->
+            <div style="position: relative; display: inline-block;">
+                <a href="#jewelry-categories" onclick="event.preventDefault(); toggleDropdown('dropdown-menu');"
+                    style="text-decoration: none; color: #d4af37;">Products ▼</a>
+                <ul id="dropdown-menu" style="list-style: none; position: absolute; top: 100%; left: 0; 
                background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
                padding: 0.5rem; margin: 0; display: none; z-index: 100; border-radius: 5px;">
-        <li><a href="#earrings" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Earrings</a></li>
-        <li><a href="#rings" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Rings</a></li>
-        <li><a href="#necklaces" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Necklaces</a></li>
-        <li><a href="#bracelets" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Bracelets</a></li>
-        <li><a href="#ceinture" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Ceinture</a></li>
-    </ul>
-</div>
+                    <li><a href="#earrings"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Earrings</a>
+                    </li>
+                    <li><a href="#rings"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Rings</a></li>
+                    <li><a href="#necklaces"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Necklaces</a>
+                    </li>
+                    <li><a href="#bracelets"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Bracelets</a>
+                    </li>
+                    <li><a href="#ceinture"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Ceinture</a>
+                    </li>
+                </ul>
+            </div>
 
-<!-- Dropdown for Contact -->
-<div style="position: relative; display: inline-block;">
-    <a href="#contact" 
-       onclick="event.preventDefault(); toggleDropdown('contact-dropdown-menu');" 
-       style="text-decoration: none; color: #d4af37;">Contact ▼</a>
-    <ul id="contact-dropdown-menu" 
-        style="list-style: none; position: absolute; top: 100%; left: 0; 
+            <!-- Dropdown for Contact -->
+            <div style="position: relative; display: inline-block;">
+                <a href="#contact" onclick="event.preventDefault(); toggleDropdown('contact-dropdown-menu');"
+                    style="text-decoration: none; color: #d4af37;">Contact ▼</a>
+                <ul id="contact-dropdown-menu" style="list-style: none; position: absolute; top: 100%; left: 0; 
                background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
                padding: 0.5rem; margin: 0; display: none; z-index: 100; border-radius: 5px;">
-        <li><a href="https://www.instagram.com/bijoutrie_anas/" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via Instagram</a></li>
-        <li><a href="https://wa.me/1234567890" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via WhatsApp</a></li>
-        <li><a href="mailto:info@bijouterieibnbatuta.com" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via Mail</a></li>
-    </ul>
-</div>
+                    <li><a href="https://www.instagram.com/bijoutrie_anas/" target="_blank"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via
+                            Instagram</a></li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">
+                                  Via WhatsApp
+                                </a>
+                              </li>
+                              
+                              
+                    <li><a href="mailto:info@bijouterieibnbatuta.com" target="_blank"
+                            style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via Mail</a>
+                    </li>
+                </ul>
+            </div>
 
-        
-    </div>
-    <button class="menu-button" onclick="toggleSidebar()">☰</button>
-</nav>
 
-<!-- JavaScript for Dropdown -->
-<!-- JavaScript for Dropdown -->
-<script>
-    function toggleDropdown(menuId) {
-        const menu = document.getElementById(menuId);
-        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
+        </div>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    </nav>
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        const productsDropdown = document.getElementById('dropdown-menu');
-        const contactDropdown = document.getElementById('contact-dropdown-menu');
-
-        if (!event.target.closest('.nav-right')) {
-            productsDropdown.style.display = 'none';
-            contactDropdown.style.display = 'none';
+    <!-- JavaScript for Dropdown -->
+    <!-- JavaScript for Dropdown -->
+    <script>
+        function toggleDropdown(menuId) {
+            const menu = document.getElementById(menuId);
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-    });
-</script>
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const productsDropdown = document.getElementById('dropdown-menu');
+            const contactDropdown = document.getElementById('contact-dropdown-menu');
+
+            if (!event.target.closest('.nav-right')) {
+                productsDropdown.style.display = 'none';
+                contactDropdown.style.display = 'none';
+            }
+        });
+    </script>
 
 
 
@@ -130,34 +147,38 @@
     </div>
 
     <!-- Slideshow Section -->
-<section class="slideshow-container">
-    <div class="slideshow">
-        <!-- First Slide: Welcome Banner -->
-        <div class="slide" style="background: url('welcomeImage-min.jpg') no-repeat center center/cover;">
-            <div class="slide-overlay">
-                <h2>Welcome to Ibn Batuta Jewelry</h2>
-                <p>Discover timeless Moroccan traditional jewelry</p>
+    <section class="slideshow-container">
+        <div class="slideshow">
+            <!-- First Slide: Welcome Banner -->
+            <div class="slide" style="background: url('welcomeImage-min.jpg') no-repeat center center/cover;">
+                <div class="slide-overlay">
+                    <h2>Welcome to Ibn Batuta Jewelry</h2>
+                    <p>Discover timeless Moroccan traditional jewelry</p>
+                </div>
             </div>
-        </div>
-        
-        <!-- Second Slide: Featured Product -->
-        <div class="slide" style="background: url('secondSlide2-min.jpg') no-repeat center center/cover;">
-            <div class="slide-overlay">
-            </div>
-        </div>
-        
-        <!-- Third Slide: Google Maps Embed -->
-         <!-- Third Slide: Google Maps Embed -->
-         <div class="slide">
-            <p>Dont know our location? here you go </p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.057661501667!2d-5.818620788529766!3d35.77968502444466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78ab660c4f7f%3A0x76eb8e22fe9b7d07!2sLux%20Mall!5e1!3m2!1sen!2sfr!4v1734188288208!5m2!1sen!2sfr" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">></iframe>      </div>
-     </div>
-    </div>
 
-    <!-- Navigation Arrows -->
-    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="next" onclick="changeSlide(1)">&#10095;</button>
-<!--     <script>let currentSlide = 0;
+            <!-- Second Slide: Featured Product -->
+            <div class="slide" style="background: url('secondSlide2-min.jpg') no-repeat center center/cover;">
+                <div class="slide-overlay">
+                </div>
+            </div>
+
+            <!-- Third Slide: Google Maps Embed -->
+            <!-- Third Slide: Google Maps Embed -->
+            <div class="slide">
+                <p>Dont know our location? here you go </p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.057661501667!2d-5.818620788529766!3d35.77968502444466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c78ab660c4f7f%3A0x76eb8e22fe9b7d07!2sLux%20Mall!5e1!3m2!1sen!2sfr!4v1734188288208!5m2!1sen!2sfr"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0">></iframe>
+            </div>
+        </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <!--     <script>let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function showSlide(index) {
             const slideshow = document.querySelector('.slideshow');
@@ -172,16 +193,16 @@
             showSlide(currentSlide);
         });
         </script> -->
-    <!-- Slide Indicators -->
-    <div class="dots-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-</section>
+        <!-- Slide Indicators -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
 
     <!-- Jewelry Collection Section -->
-<!--     <section id="products">
+    <!--     <section id="products">
         <div class="product">
             <img src="greenWhite-min.png" alt="Gold Necklace">
             <h3>Gold Necklace</h3>
@@ -198,14 +219,19 @@
             <a href="https://www.instagram.com/selected.jewelery/" class="contact-btn">Contact Dealer via Instagram</a>
         </div>
     </section> -->
-     <!-- Jewelry Categories Section -->
-     <style>.category:hover {
-        transform: translateY(-8px); /* Slight lift effect */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
-    }
-    .category:hover img {
-    transform: scale(1.05); /* Slight zoom on image */
-}
+    <!-- Jewelry Categories Section -->
+    <style>
+        .category:hover {
+            transform: translateY(-8px);
+            /* Slight lift effect */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            /* Elevated shadow on hover */
+        }
+
+        .category:hover img {
+            transform: scale(1.05);
+            /* Slight zoom on image */
+        }
     </style>
     <h2 id="jewelry-categories">Our Traditional Moroccan Jewelry Categories</h2>
     <style>
@@ -214,12 +240,13 @@
             font-size: 2rem;
             color: #d4af37;
             margin-bottom: 1rem;
-            font-family: 'Georgia', serif; /* Adds a traditional touch */
+            font-family: 'Georgia', serif;
+            /* Adds a traditional touch */
         }
     </style>
 
-     <section id="categories">
-        
+    <section id="categories">
+
         <div id="earrings" class="category" onclick="window.location.href='earrings.html'">
             <img src="earingCategory1.png" alt="Earrings">
             <h3>Earrings</h3>
@@ -248,10 +275,7 @@
     </section>
 
 
-    <footer class="footer">
-        <p>&copy; 2024 Elegant Jewelry Catalog. All rights reserved.</p>
-    </footer>
-
+  
     <script defer>
         // Toggle Sidebar for Mobile
         function toggleSidebar() {
@@ -260,33 +284,69 @@
             sidebar.classList.toggle("open");
             overlay.classList.toggle("visible");
         }
-    
+
         function closeSidebar() {
             document.getElementById("sidebar").classList.remove("open");
             document.getElementById("overlay").classList.remove("visible");
         }
-    
+
         // Slideshow functionality
         let slideIndex = 0;
-    
+
         function showSlides() {
             const slides = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.dot');
-    
+
             slides.forEach((slide, index) => {
                 slide.style.display = index === slideIndex ? 'block' : 'none';
             })
-    
+
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === slideIndex);
             });
-    
+
             slideIndex = (slideIndex + 1) % slides.length;
             setTimeout(showSlides, 3000); // Change slide every 3 seconds
         }
-    
+
         document.addEventListener('DOMContentLoaded', showSlides);
     </script>
-    
+
 </body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/bijouterie_anas/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </li>
+                <li>
+                    <a href="mailto:info@bijouterieibnbatuta.com" target="_blank" rel="noopener noreferrer">Email</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/selected.jewelery/" target="_blank" rel="noopener noreferrer">
+                    <img src="igpng.png" alt="Instagram">
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank" rel="noopener noreferrer">
+                    <img src="wtspng.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank" rel="noopener noreferrer">
+                    <img src="igpng.png" alt="Email">
+                </a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <p>&copy; 2024 Bijouterie Ibn Batuta. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
 </html>
