@@ -293,41 +293,42 @@
             document.getElementById("overlay").classList.remove("visible");
         }
 
-        let slideIndex = 0; // Start with the first slide
+      let slideIndex = 0;
 
 function showSlides() {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
 
-    // Hide all slides with zero opacity
+    // Hide all slides first
     slides.forEach((slide) => {
         slide.style.display = 'none';
         slide.style.opacity = 0;
     });
 
-    // Show current slide with smooth transition
+    // Show current slide
     slides[slideIndex].style.display = 'block';
     setTimeout(() => {
         slides[slideIndex].style.opacity = 1;
-    }, 50); // small delay to allow for the transition effect to kick in
+    }, 50);
 
-    // Activate corresponding dot
+    // Update the active dot
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === slideIndex);
     });
 
-    // Keep slide visible for 5 seconds before transitioning to next
-    setTimeout(showSlides, 5000); // Slide change every 5 seconds
+    // Cycle through slides after 8 seconds (8000 ms)
+    setTimeout(() => {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlides();
+    }, 8000);
 }
-
 function changeSlide(direction) {
     const slides = document.querySelectorAll('.slide');
     slideIndex = (slideIndex + direction + slides.length) % slides.length;
     showSlides(); // Reapply the changes after manual control
 }
-
 document.addEventListener('DOMContentLoaded', () => {
-    showSlides(); // Start the slideshow
+    showSlides();  // Start the slideshow
 });
 
 
