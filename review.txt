@@ -1,9 +1,10 @@
 ortohograph
-speed
 language
-// written stuff on slideShow improvements
+
+
+
+speed
 / footer on mobile to be centered
-contacter le vendeur via what?
 // button for each category
 
 
@@ -14,3 +15,5 @@ contacter le vendeur via what?
 ///////ancre to products catalogue and a menu for type of products
 phone number , mail
 phone version right space
+contacter le vendeur via what?
+// written stuff on slideShow improvements

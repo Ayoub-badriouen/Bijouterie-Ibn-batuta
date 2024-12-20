@@ -905,3 +905,14 @@ max-width: 100%;
 }
 
 
+#language-select {
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    background-color: #fff;
+    color: #333;
+}
+#language-select:focus {
+    outline: none;
+    border-color: #d4af37;
+}
