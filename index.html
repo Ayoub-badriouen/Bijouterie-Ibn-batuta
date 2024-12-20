@@ -164,6 +164,8 @@
             <!-- Second Slide: Featured Product -->
             <div class="slide" style="background: url('slideShow2.png') no-repeat center center/cover;">
                 <div class="slide-overlay">
+                    <h2>Decouvrez nous nouveauté</h2>
+                    <p>sur notre page instagram</p>
                 </div>
             </div>
 
@@ -320,7 +322,7 @@ function showSlides() {
     setTimeout(() => {
         slideIndex = (slideIndex + 1) % slides.length;
         showSlides();
-    }, 8000);
+    }, 8000);  
 }
 function changeSlide(direction) {
     const slides = document.querySelectorAll('.slide');
