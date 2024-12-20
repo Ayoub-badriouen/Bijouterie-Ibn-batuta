@@ -83,70 +83,200 @@
 
 
 
-    <!-- Product List for Rings -->
-    <section class="product-list">
-        <h2>Our Collection of Bracelets</h2>
-        
-        <div class="products">
-            <!-- Example Product 1 -->
-            <div class="product">
-                <img src="Bracelets1.png" alt="Ring 1">
-                <h3>Bracelet beldi en vert</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
-        
-            <!-- Example Product 2 -->
-            <div class="product">
-                <img src="Bracelets2.png" alt="Ring 2">
-                <h3>Bracelet blanc</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
-        
-            <!-- Example Product 3 -->
-            <div class="product">
-                <img src="Bracelets3.png" alt="Ring 3">
-                <h3>Bracelet rosas</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
-            <!-- Example Product 3 -->
-            <div class="product">
-                <img src="Bracelets4.png" alt="Ring 3">
-                <h3>Sertla coloré</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
-            <!-- Example Product 3 -->
-            <div class="product">
-                <img src="Bracelets5.png" alt="Ring 3">
-                <h3>Bracelet Beldi</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
-            <div class="product">
-                <img src="Bracelets6.png" alt="Ring 3">
-                <h3>Bracelet coloré</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
-            <div class="product">
-                <img src="Bracelets7.png" alt="Ring 3">
-                <h3>Sertla</h3>
-                <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
-                    <button>Contacter le vendeur</button>
-                </a>
-            </div>
+    <!-- Section for Product List -->
+<section class="product-list">
+    <h2>Our Collection of Bracelets</h2>
+    
+    <div class="products">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="Bracelets1.png" alt="Bracelets 1">
+            <h3>Bracelet beldi en vert</h3>
+            <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
-        
-    </section>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="Bracelets2.png" alt="Bracelets 2">
+            <h3>Bracelet blanc</h3>
+            <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="Bracelets3.png" alt="Bracelets 3">
+            <h3>Bracelet rosas</h3>
+            <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="Bracelets4.png" alt="Bracelets 4">
+            <h3>Sertla coloré</h3>
+            <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="Bracelets5.png" alt="Bracelets 5">
+            <h3>Bracelet Beldi</h3>
+            <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
+        </div>
+
+             <!-- Product 5 -->
+             <div class="product">
+                <img src="Bracelets6.png" alt="Bracelets 5">
+                <h3>Bracelet Beldi coloré</h3>
+                <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
+            </div>
+
+                 <!-- Product 5 -->
+        <div class="product">
+            <img src="Bracelets7.png" alt="Bracelets 5">
+            <h3>Sertla</h3>
+            <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
+        </div>
+
+         
+    </div>
+</section>
+
+<!-- Modal for Contact Menu -->
+<div id="contactMenu" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeContactMenu()">&times;</span>
+        <h3>Contactez via:</h3>
+        <div class="contact-options">
+            <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank">
+                <button class="contact-button">
+                    Instagram
+                    <br>
+                    <img src="igpng.png" alt="Instagram Logo" class="contact-logo">
+                </button>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank">
+                <button class="contact-button">
+                    WhatsApp
+                    <br>
+                    <img src="wtspng.png" alt="WhatsApp Logo" class="contact-logo">
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .product {
+        width: 200px;
+        text-align: center;
+    }
+
+    .contact-seller {
+        background-color: #d4af37; /* Creamish Gold */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .contact-seller:hover {
+        background-color: #b08b2e;
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-button {
+        background-color: #d4af37; /* Creamish Gold */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .contact-button:hover {
+        background-color: #b08b2e;
+    }
+
+    .contact-logo {
+        display: block;
+        margin: 5px auto;
+        width: 24px;
+        height: 24px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: black;
+    }
+</style>
+
+
+
+<!-- JavaScript -->
+<script>
+    function openContactMenu() {
+        document.getElementById("contactMenu").style.display = "block";
+    }
+
+    function closeContactMenu() {
+        document.getElementById("contactMenu").style.display = "none";
+    }
+
+    // Close modal if clicked outside content
+    window.onclick = function(event) {
+        const modal = document.getElementById("contactMenu");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
     <footer class="footer">
         <div class="footer-container">
