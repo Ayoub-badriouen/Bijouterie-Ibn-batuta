@@ -11,12 +11,12 @@
         <!-- Header (same as index.html) -->
         <header>
             <div class="header-container">
-                <img src="sideHeaders-left.png" alt="Side Image" class="side-image left-image">
+                <img src="images/sideHeaders-left.png" alt="Side Image" class="side-image left-image">
                 <div class="text-content">
-                    <img src="bismillah-min.png" alt="Shop Logo" class="shop-logo">
+                    <img src="images/bismillah-min.png" alt="Shop Logo" class="shop-logo">
                     <p>Discover timeless elegance and beauty</p>
                 </div>
-                <img src="sideHeaders.png" alt="Side Image" class="side-image">
+                <img src="images/sideHeaders.png" alt="Side Image" class="side-image">
             </div>
         </header>
     
@@ -91,49 +91,49 @@
     <div class="products">
         <!-- Product 1 -->
         <div class="product">
-            <img src="necklaces0.png" alt="necklaces 1">
+            <img src="images/necklaces0.png" alt="necklaces 1">
             <h3>Parure beldi simple</h3>
             <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
 
         <!-- Product 2 -->
         <div class="product">
-            <img src="necklaces2.png" alt="necklaces 2">
+            <img src="images/necklaces2.png" alt="necklaces 2">
             <h3>Parure Rouge</h3>
             <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
 
         <!-- Product 3 -->
         <div class="product">
-            <img src="necklaces3.png" alt="necklaces 3">
+            <img src="images/necklaces3.png" alt="necklaces 3">
             <h3>Parure rosas</h3>
             <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
 
         <!-- Product 4 -->
         <div class="product">
-            <img src="necklaces4.png" alt="necklaces 4">
+            <img src="images/necklaces4.png" alt="necklaces 4">
             <h3>Parure beldi rouge</h3>
             <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
 
         <!-- Product 5 -->
         <div class="product">
-            <img src="necklaces5.png" alt="necklaces 5">
+            <img src="images/necklaces5.png" alt="necklaces 5">
             <h3>Parure Fdila</h3>
             <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
 
              <!-- Product 5 -->
              <div class="product">
-                <img src="necklaces6.png" alt="necklaces 5">
+                <img src="images/necklaces6.png" alt="necklaces 5">
                 <h3>Parure coloré</h3>
                 <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
             </div>
 
                  <!-- Product 5 -->
         <div class="product">
-            <img src="necklaces7.png" alt="necklaces 5">
+            <img src="images/necklaces7.png" alt="necklaces 5">
             <h3>Parure rose</h3>
             <button class="contact-seller" onclick="openContactMenu()">Contacter le vendeur</button>
         </div>
@@ -152,14 +152,14 @@
                 <button class="contact-button">
                     Instagram
                     <br>
-                    <img src="igpng.png" alt="Instagram Logo" class="contact-logo">
+                    <img src="images/igpng.png" alt="Instagram Logo" class="contact-logo">
                 </button>
             </a>
             <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank">
                 <button class="contact-button">
                     WhatsApp
                     <br>
-                    <img src="wtspng.png" alt="WhatsApp Logo" class="contact-logo">
+                    <img src="images/wtspng.png" alt="WhatsApp Logo" class="contact-logo">
                 </button>
             </a>
         </div>
@@ -280,40 +280,18 @@
 </script>
 
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    </li>
-                    <li>
-                        <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                    </li>
-                    <li>
-                        <a href="mailto:info@bijouterieibnbatuta.com" target="_blank" rel="noopener noreferrer">Email</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/selected.jewelery/" target="_blank" rel="noopener noreferrer">
-                        <img src="igpng.png" alt="Instagram">
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=212667394665" target="_blank" rel="noopener noreferrer">
-                        <img src="wtspng.png" alt="WhatsApp">
-                    </a>
-                    <a href="https://www.instagram.com/bijoutrie_anas/" target="_blank" rel="noopener noreferrer">
-                        <img src="igpng.png" alt="Email">
-                    </a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <p>&copy; 2024 Bijouterie Ibn Batuta. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<div id="footer-placeholder"></div>
+
+    <script>
+        function includeHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading ' + file + ':', error));
+        }
+
+        includeHTML('C:\Users\itmee\Desktop\siteGitHubMaster\Ibn-Batuta-Bijouterie-Tanger\header.html', 'header-placeholder');
+        includeHTML('footer.html', 'footer-placeholder');
+    </script>
 </body>
 </html>
