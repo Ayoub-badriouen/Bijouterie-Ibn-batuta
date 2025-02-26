@@ -1,0 +1,84 @@
+        <!-- Header (same as index.html) -->
+        <header>
+            <div class="header-container">
+                <img src="images/sideHeaders-left.png" alt="Side Image" class="side-image left-image">
+                <div class="text-content">
+                    <img src="images/bismillah-min.png" alt="Shop Logo" class="shop-logo">
+                    <p>Discover timeless elegance and beauty</p>
+                </div>
+                <img src="images/sideHeaders.png" alt="Side Image" class="side-image">
+            </div>
+        </header>
+    
+          <!-- Desktop Navigation -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-title" style="margin-left: 50px;">Bijouterie Ibn Batuta</div>
+        <div class="nav-right">
+            <a href="index.html">Products</a>
+               
+        
+<!-- Dropdown for Contact -->
+<div style="position: relative; display: inline-block;">
+    <a href="#contact" 
+       onclick="event.preventDefault(); toggleDropdown('contact-dropdown-menu');" 
+       style="text-decoration: none; color: #d4af37;">Contact ▼</a>
+    <ul id="contact-dropdown-menu" 
+        style="list-style: none; position: absolute; top: 100%; left: 0; 
+               background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+               padding: 0.5rem; margin: 0; display: none; z-index: 100; border-radius: 5px;">
+        <li><a href="https://www.instagram.com/bijoutrie_anas/" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via Instagram</a></li>
+        <li><a href="https://wa.me/1234567890" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via WhatsApp</a></li>
+        <li><a href="mailto:info@bijouterieibnbatuta.com" target="_blank" style="text-decoration: none; color: #333; display: block; padding: 0.5rem;">Via Mail</a></li>
+    </ul>
+</div>
+
+        
+    </div>
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+</nav>
+
+<!-- JavaScript for Dropdown -->
+<!-- JavaScript for Dropdown -->
+<script>
+    function toggleDropdown(menuId) {
+        const menu = document.getElementById(menuId);
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const productsDropdown = document.getElementById('dropdown-menu');
+        const contactDropdown = document.getElementById('contact-dropdown-menu');
+
+        if (!event.target.closest('.nav-right')) {
+            productsDropdown.style.display = 'none';
+            contactDropdown.style.display = 'none';
+        }
+    });
+</script>
+    </nav>
+
+    <!-- Sidebar for Mobile -->
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <a href="index.html" onclick="closeSidebar()">Home</a>
+        <a href="about.html" onclick="closeSidebar()">About</a>
+        <a href="index.html" onclick="closeSidebar()">Products</a>
+        <a href="https://www.instagram.com/bijoutrie_anas/" onclick="closeSidebar()">Contact</a>
+    </div>
+
+    
+    
+</style>
+    <!-- Sidebar for Mobile -->
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <a href="#home" onclick="closeSidebar()">Home</a>
+        <a href="#about" onclick="closeSidebar()">About</a>
+        <a href="#products" onclick="closeSidebar()">Products</a>
+        <a href="https://www.instagram.com/bijoutrie_anas/" onclick="closeSidebar()">Contact</a>
+    </div>
